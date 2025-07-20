@@ -12,7 +12,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:\Users\Ludus\scoop\apps\tesseract\5.
 # Point to TESSDATA_PREFIX
 os.environ['TESSDATA_PREFIX'] = r'C:\Users\Ludus\scoop\apps\tesseract\5.5.0.20241111/tessdata'
 # Words to be censored
-BANNED_WORDS = ["job", "employed", "work", "9-5"]
+BANNED_WORDS = ["job", "employed", "work", "9-5", "employment", "employee", "employ"]
 
 class SlurPreventer:
     def __init__(self, root):
