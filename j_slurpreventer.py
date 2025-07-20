@@ -66,7 +66,7 @@ class SlurPreventer:
 
         n_boxes = len(data['text'])
         for i in range(n_boxes):
-            if int(data['conf'][i]) > 75:  # Confidence threshold
+            if int(data['conf'][i]) > 30:  # Confidence threshold
                 text = data['text'][i].lower()
                 if text in BANNED_WORDS:
                     (x, y, w, h) = (data['left'][i], data['top'][i], data['width'][i], data['height'][i])
@@ -80,7 +80,7 @@ class SlurPreventer:
                     self.canvas.create_image(x, y, image=resized_tk_image, anchor=tk.NW)
 
         # Rescan after a delay
-        self.root.after(250, self.scan_screen)
+        self.root.after(1, self.scan_screen)
 
 if __name__ == "__main__":
     root = tk.Tk()
